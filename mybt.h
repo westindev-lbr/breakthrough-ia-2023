@@ -158,6 +158,8 @@ void bt_t::print_board(FILE* _fp = stderr) {
     fprintf(_fp, "\n");
   }
 }
+
+
 void bt_t::print_turn_and_moves(FILE* _fp = stderr) {
   fprintf(_fp,"turn:%d\nmoves:", turn);
   for(int i = 0; i < nb_moves; i++) {
@@ -166,10 +168,14 @@ void bt_t::print_turn_and_moves(FILE* _fp = stderr) {
   }
   fprintf(_fp, "\n");
 }
+
+
 void bt_t::update_moves() {
   if(turn%2 == 0) update_moves(WHITE);
   else update_moves(BLACK);
 }
+
+
 void bt_t::update_moves(int _color) {
   if(turn_of_last_moves_update == turn) return; // MAJ ever done
   turn_of_last_moves_update = turn;
@@ -226,11 +232,15 @@ bool bt_t::black_can_move_left(int _line, int _col) {
   if(board[_line+1][_col-1] != BLACK) return true;
   return false;
 }
+
+
 bt_move_t bt_t::get_rand_move() {
   update_moves();
   int r = ((int)rand())%nb_moves;
   return moves[r];
 }
+
+
 bool bt_t::can_play(bt_move_t _m) {
   int dx = abs(_m.col_f - _m.col_i);
   if(dx > 1) return false;
@@ -294,6 +304,7 @@ void bt_t::play(bt_move_t _m) {
   }
   turn++;
 }
+
 int bt_t::endgame() {
   for(int i = 0; i < nbc; i++) {
     if(board[0][i] == WHITE) return WHITE;
@@ -303,6 +314,8 @@ int bt_t::endgame() {
   }
   return EMPTY;
 }
+
+
 double bt_t::score(int _color) {
   int state = endgame();
   if(state == EMPTY) return 0.0;

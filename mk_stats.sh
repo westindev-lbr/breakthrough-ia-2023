@@ -1,7 +1,7 @@
 #!/bin/sh
 
 PRG_1=./player_A
-PRG_2=./player_B
+PRG_2=./pwet
 GAME_DIR=new_stats
 NB_GAMES_PER_SIDE=10
 NBL=6
