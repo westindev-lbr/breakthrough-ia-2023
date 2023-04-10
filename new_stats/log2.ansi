@@ -1,0 +1,135 @@
+rand_player started
+rand_player receive name
+pwet started
+pwet receive name
+rand_player receive newgame 6 4
+ready to play on 6x4 board
+pwet receive newgame 6 4
+ready to play on 6x4 board
+rand_player receive genmove
+2c3c
+pwet receive play 2c3c
+2c3c
+   [34ma b c d [0m
+[34m 6[0m [31m@[0m [31m@[0m [31m@[0m [31m@[0m 
+[34m 5[0m [31m@[0m [31m@[0m [31m@[0m [31m@[0m 
+[34m 4[0m . . . . 
+[34m 3[0m . . o . 
+[34m 2[0m o o . o 
+[34m 1[0m o o o o 
+pwet receive genmove
+[31m5a4b[0m
+rand_player receive play 5a4b
+[31m5a4b[0m
+rand_player receive genmove
+1c2c
+pwet receive play 1c2c
+CANT play 5 2 4 2 ?
+   [34ma b c d [0m
+[34m 6[0m [31m@[0m . . . 
+[34m 5[0m . [31m@[0m . . 
+[34m 4[0m . . . . 
+[34m 3[0m . . . . 
+[34m 2[0m o . . . 
+[34m 1[0m o . . . 
+pwet receive genmove
+2a3b
+rand_player receive play 2a3b
+CANT play 4 0 3 1 ?
+rand_player receive genmove
+[31m5c4c[0m
+pwet receive play 5c4c
+CANT play 1 2 2 2 ?
+   [34ma b c d [0m
+[34m 6[0m [31m@[0m . . . 
+[34m 5[0m . [31m@[0m . . 
+[34m 4[0m . . . . 
+[34m 3[0m . o . . 
+[34m 2[0m . . . . 
+[34m 1[0m o . . . 
+pwet receive genmove
+[31m6a5a[0m
+rand_player receive play 6a5a
+CANT play 0 0 1 0 ?
+rand_player receive genmove
+2d3d
+pwet receive play 2d3d
+CANT play 4 3 3 3 ?
+   [34ma b c d [0m
+[34m 6[0m . . . . 
+[34m 5[0m [31m@[0m [31m@[0m . . 
+[34m 4[0m . . . . 
+[34m 3[0m . o . . 
+[34m 2[0m . . . . 
+[34m 1[0m o . . . 
+pwet receive genmove
+3b4c
+rand_player receive play 3b4c
+CANT play 3 1 2 2 ?
+rand_player receive genmove
+[31m4c3b[0m
+pwet receive play 4c3b
+CANT play 2 2 3 1 ?
+   [34ma b c d [0m
+[34m 6[0m . . . . 
+[34m 5[0m [31m@[0m [31m@[0m . . 
+[34m 4[0m . . o . 
+[34m 3[0m . . . . 
+[34m 2[0m . . . . 
+[34m 1[0m o . . . 
+pwet receive genmove
+[31m5a4b[0m
+rand_player receive play 5a4b
+CANT play 1 0 2 1 ?
+rand_player receive genmove
+2a3a
+pwet receive play 2a3a
+CANT play 4 0 3 0 ?
+   [34ma b c d [0m
+[34m 6[0m . . . . 
+[34m 5[0m . [31m@[0m . . 
+[34m 4[0m . [31m@[0m o . 
+[34m 3[0m . . . . 
+[34m 2[0m . . . . 
+[34m 1[0m o . . . 
+pwet receive genmove
+4c5d
+rand_player receive play 4c5d
+CANT play 2 2 1 3 ?
+rand_player receive genmove
+[31m5b4c[0m
+pwet receive play 5b4c
+[31m5b4c[0m
+   [34ma b c d [0m
+[34m 6[0m . . . . 
+[34m 5[0m . . . o 
+[34m 4[0m . [31m@[0m [31m@[0m . 
+[34m 3[0m . . . . 
+[34m 2[0m . . . . 
+[34m 1[0m o . . . 
+pwet receive genmove
+5d6d
+rand_player receive play 5d6d
+CANT play 1 3 0 3 ?
+rand_player receive genmove
+3c4d
+pwet receive play 3c4d
+CANT play 3 2 2 3 ?
+   [34ma b c d [0m
+[34m 6[0m . . . o 
+[34m 5[0m . . . . 
+[34m 4[0m . [31m@[0m [31m@[0m . 
+[34m 3[0m . . . . 
+[34m 2[0m . . . . 
+[34m 1[0m o . . . 
+pwet receive genmove
+game finished
+white player wins
+Attempt to index the empty string with 0.
+run_many_games.pike:240: /main()->btp_game()->play_move("")
+run_many_games.pike:344: /main()->btp_game()->play()
+run_many_games.pike:383: /main()->run_many_games(/main()->btp_game(),10,0)
+run_many_games.pike:460:
+    /main()->main(13,({"/Users/axellbr/Documents/L3/S6/IA Jeux/breakthrough-ia-2023/run_many_games.pike",0,0,0,0,0,0,0,0,0,0,0,0}))
+bye.
+bye.

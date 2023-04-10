@@ -5,6 +5,6 @@
 
   number of wins
  ================
-    ./player_A is  10
-    ./player_B is  10
+    ./player_A is  3
+    ./rand_player is  17
  ================

@@ -1,7 +1,7 @@
 #!/bin/sh
 
-PRG_1=./player_A
-PRG_2=./pwet
+PRG_1=./pwet
+PRG_2=./rand_player
 GAME_DIR=new_stats
 NB_GAMES_PER_SIDE=10
 NBL=6
@@ -27,8 +27,8 @@ then
   exit 0
 fi
 
-pike run_many_games.pike -f ${PRG_1} -s ${PRG_2} -o ${GAME_DIR} -n ${NB_GAMES_PER_SIDE} -l ${NBL} -c ${NBC} 2>${GAME_DIR}/log1.txt 1>&2
-pike run_many_games.pike -f ${PRG_2} -s ${PRG_1} -o ${GAME_DIR} -n ${NB_GAMES_PER_SIDE} -l ${NBL} -c ${NBC} 2>${GAME_DIR}/log2.txt 1>&2
+pike run_many_games.pike -f ${PRG_1} -s ${PRG_2} -o ${GAME_DIR} -n ${NB_GAMES_PER_SIDE} -l ${NBL} -c ${NBC} 2>${GAME_DIR}/log1.ansi 1>&2
+pike run_many_games.pike -f ${PRG_2} -s ${PRG_1} -o ${GAME_DIR} -n ${NB_GAMES_PER_SIDE} -l ${NBL} -c ${NBC} 2>${GAME_DIR}/log2.ansi 1>&2
 
 echo " ================" > ${GAME_DIR}/resume.txt
 echo "  NB_GAMES_PER_SIDE ${NB_GAMES_PER_SIDE}" >> ${GAME_DIR}/resume.txt

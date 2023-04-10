@@ -1,0 +1,3 @@
+ (./pwet 13 18.75) (./rand_player -13 24.00) => ./pwet win
+ (./pwet 13 17.75) (./rand_player -13 24.00) => ./pwet win
+ (./pwet 13 17.76) (./rand_player -13 24.00) => ./pwet win

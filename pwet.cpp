@@ -10,7 +10,7 @@ bool white_turn = true;
 #ifndef VERBOSE_RAND_PLAYER
 #define VERBOSE_RAND_PLAYER
 bool verbose = true;
-bool showboard_at_each_move = false;
+bool showboard_at_each_move = true;
 #endif
 
 void help()
@@ -63,8 +63,9 @@ void genmove()
         printf("= \n\n");
         return;
     }
-    bt_move_t m = B.get_rand_move();
+    bt_move_t m = B.get_best_move();
     B.play(m);
+    B.move_stack.clear();
     if (verbose)
     {
         m.print(stderr, white_turn, B.nbl);
@@ -74,13 +75,81 @@ void genmove()
     printf("= %s\n\n", m.tostr(B.nbl).c_str());
 }
 
+void play(char a, char b, char c, char d)
+{
+    bt_move_t m;
+    m.line_i = boardheight - (a - '0');
+    m.col_i = b - 'a';
+    m.line_f = boardheight - (c - '0');
+    m.col_f = d - 'a';
+    if (B.can_play(m))
+    {
+        B.play(m);
+        if (verbose)
+        {
+            m.print(stderr, white_turn, B.nbl);
+            fprintf(stderr, "\n");
+        }
+        white_turn = !white_turn;
+    }
+    else
+    {
+        fprintf(stderr, "CANT play %d %d %d %d ?\n",
+                m.line_i,
+                m.col_i,
+                m.line_f,
+                m.col_f);
+    }
+    if (showboard_at_each_move)
+        B.print_board(stderr);
+    printf("= \n\n");
+}
+
 int main(void)
 {
     bool echo_on = false;
     setbuf(stdout, 0);
     setbuf(stderr, 0);
-    if(verbose) fprintf(stderr, "rand_player started\n");
-    std::cout << "Hello World" << std::endl;
+    if (verbose)
+        fprintf(stderr, "pwet started\n");
+    char a, b, c, d; // pour joeur un coup
+    for (std::string line; std::getline(std::cin, line);)
+    {
+        if (verbose)
+            fprintf(stderr, "pwet receive %s\n", line.c_str());
+        if (echo_on)
+            if (verbose)
+                fprintf(stderr, "%s\n", line.c_str());
+        if (line.compare("quit") == 0)
+        {
+            printf("= \n\n");
+            break;
+        }
+        else if (line.compare("echo ON") == 0)
+            echo_on = true;
+        else if (line.compare("echo OFF") == 0)
+            echo_on = false;
+        else if (line.compare("help") == 0)
+            help();
+        else if (line.compare("name") == 0)
+            name();
+        else if (sscanf(line.c_str(), "newgame %d %d\n", &boardheight, &boardwidth) == 2)
+            newgame();
+        else if (line.compare("genmove") == 0)
+            genmove();
+        else if (sscanf(line.c_str(), "play %c%c%c%c\n", &a, &b, &c, &d) == 4)
+            play(a, b, c, d);
+        else if (line.compare("showboard") == 0)
+            showboard();
+        else if (line.compare(0, 2, "//") == 0)
+            ; // just comments
+        else
+            fprintf(stderr, "???\n");
+        if (echo_on)
+            printf(">");
+    }
+    if (verbose)
+        fprintf(stderr, "bye.\n");
 
     return 0;
 }

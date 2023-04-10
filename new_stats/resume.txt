@@ -5,6 +5,6 @@
 
   number of wins
  ================
-    ./player_A is  10
-    ./rand_player is  10
+    ./pwet is  3
+    ./rand_player is  0
  ================
