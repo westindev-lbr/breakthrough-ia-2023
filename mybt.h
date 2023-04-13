@@ -15,7 +15,7 @@
 #define BLACK 1
 #define EMPTY 2
 #define INF 999
-#define DEPTH_MAX 3
+#define DEPTH_MAX 13
 
 // Chars of board
 char* cboard = ( char* ) "o@.";
